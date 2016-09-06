@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <section>
+        <h2>Hello from Dialog A!</h2>
+
+        <form name="data.form">
+            <div class="form-group" data-ng-class="{'has-error bg-danger':data.form.myInput.$invalid}">
+                <input name="myInput" class="form-control" data-ng-required="true" type="text" data-ng-model="data.helloWorld" />
+            </div>
+            <span data-ng-bind="data.helloWorld"></span>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <th>title</th>
+                <th>author</th>
+                <th>Genre</th>
+                <th>Year</th>
+            </thead>
+            <tbody>
+                  <tr data-ng-dblclick="edit()" data-ng-repeat="item in data.books" data-ng-click="selectRow($index)" data-ng-class="{'active':selectedRowIndex===$index}">
+                    <td data-ng-bind="item.title"></td>
+                    <td data-ng-bind="item.author"></td>
+                    <td data-ng-bind="item.genre"></td>
+                    <td data-ng-bind="item.year"></td>
+
+                </tr>
+            </tbody>
+
+        </table>
+
+        <button data-ng-hide="selectedRowIndex===undefined" data-ng-click="edit()" class="btn btn-default" >Edit book</button>
+        <button  data-ng-click="add()" class="btn btn-default" >Add book</button>
+
+        <!-- <button type="button" class="btn btn-default" data-ng-click="addBook(title, author, genre,year)" data-toggle="modal" data-target="#myModal">Add book</button> -->
+        <!-- <div>
+            <form>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <h4 class="modal-title">Add book</h4>
+                            </div>
+                            <div class="modal-body">
+                                Title: <input type="text" data-ng-model="title"><br>
+                                Author: <input type="text" data-ng-model="author"><br>
+                                Genre: <input type="text" data-ng-model="genre"><br>
+                                Year: <input type="text" data-ng-model="year"><br>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" data-ng-click="addBook(title,author,genre,year)">Submit</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div> -->
+
+    </section>
+
+</body>
+
+</html>
