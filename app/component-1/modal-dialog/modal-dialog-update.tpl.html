@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <div class="modal-content" name="modal-edit">
+        <div class="modal-header">
+            <h3 class="modal-title">Update book!</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <label>Title:</label>
+                <form name="bookTitle">
+                    <div class="form-group" ng-class="{'has-error bg-danger': bookTitle.title.$invalid && bookTitle.title.$dirty}">
+                        <input type="text" class="form-control" name="title" ng-required="true" ng-model="data.selectedBook.title" />
+                    </div>
+                </form>
+            </p>
+            <p>
+                <label>Author:</label>
+                <form name="bookAuthor">
+                    <div class="form-group" ng-class="{'has-error bg-danger': bookAuthor.author.$invalid && bookAuthor.author.$dirty}">
+                        <input type="text" class="form-control" name="author" ng-required="true" ng-model="data.selectedBook.author" />
+                    </div>
+                </form>
+            </p>
+            <p>
+                <label>Genre:</label>
+                <form name="bookGenre">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="genre" ng-required="true" ng-model="data.selectedBook.genre" />
+                    </div>
+                </form>
+            </p>
+            <p>
+                <label>Year:</label>
+                <form name="bookYear">
+                    <div class="form-group">
+                        <datepicker ng-model="data.selectedBook.year" name="year" min-mode="year" datepicker-mode="'year'" />
+                    </div>
+                </form>
+            </p>
+        </div>
+        <div class="modal-footer ">
+            <button type="submit" class="btn btn-success" data-ng-click="update()" ng-disabled="bookTitle.title.$invalid || bookAuthor.author.$invalid">Submit</button>
+            <button class="btn btn-danger" data-ng-click="close()">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>
