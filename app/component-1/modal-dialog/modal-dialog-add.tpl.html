@@ -19,6 +19,7 @@
                         <div class="form-group" ng-class="{'has-error bg-danger': bookTitle.title.$invalid && bookTitle.title.$dirty}">
                             <input type="text" class="form-control" name="title" ng-required="true" ng-model="data.selectedBook.title" />
                         </div>
+                        <p ng-show="bookTitle.title.$invalid && bookTitle.title.$dirty ">Title is required!</p>
                     </form>
                 </p>
                 <p>
@@ -27,6 +28,7 @@
                         <div class="form-group" ng-class="{'has-error bg-danger': bookAuthor.author.$invalid && bookAuthor.author.$dirty}">
                             <input type="text" class="form-control" name="author" ng-required="true" ng-model="data.selectedBook.author" />
                         </div>
+                        <p ng-show="bookAuthor.author.$invalid && bookAuthor.author.$dirty ">Author is required!</p>
                     </form>
                 </p>
                 <p>
